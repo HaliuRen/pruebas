@@ -12,12 +12,30 @@
                 $nombreUsuario = $_POST['nombreUsuario'];
                 $correo = $_POST['correo'];
                 $contraseña = $_POST['contraseña'];
-                $revisar = getimagesize($_FILES["img"]["tmp_name"]);
-                if($revisar !== false){
-                    $img = $_FILES['img']['tmp_name'];
-                    $imgContenido = addslashes(file_get_contents($img));
+                $archivo = $_FILES["archivo"]["tmp_name"];
+                if($archivo !== false){
+                    $fileTmpPath = $_FILES['archivo']['tmp_name'];
+                    $fileName = $_FILES['archivo']['name'];
+                    $fileSize = $_FILES['archivo']['size'];
+                    $fileType = $_FILES['archivo']['type'];
+                    $fileNameCmps = explode(".", $fileName);
+                    $fileExtension = strtolower(end($fileNameCmps));
+                    
+                    $newFileName = $fileName;
+
+                    $allowedfileExtensions = array('jpg', 'gif', 'png', 'zip', 'txt', 'xls', 'doc', 'pdf');
+
+                    if (in_array($fileExtension, $allowedfileExtensions)){
+                        
+                        Usuario::registrar($nombreUsuario,$correo,$contraseña,$newFileName);  
+                    } 
                 }
-                Usuario::registrar($nombreUsuario,$correo,$contraseña,$imgContenido);
+                // $revisar = getimagesize($_FILES["img"]["tmp_name"]);
+                // if($revisar !== false){
+                //     $img = $_FILES['img']['tmp_name'];
+                //     $imgContenido = addslashes(file_get_contents($img));
+                // }
+                
                 
             }
 

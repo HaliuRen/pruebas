@@ -21,8 +21,8 @@
             </div>
 
             <div class="mb-3">
-              <label for="img" class="form-label">Foto de Perfil</label>
-              <input type="file" class="form-control" name="img" id="img" required>
+              <label for="archivo" class="form-label">Foto de Perfil</label>
+              <input type="file" class="form-control" name="archivo" id="archivo" required>
             </div>
 
             <button type="submit" class="btn btn-success">Registrar</button>

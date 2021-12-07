@@ -23,6 +23,13 @@
             <li class="nav-item active">
                 <a class="nav-link" href="?controlador=usuarios&accion=inicio">Usuarios<span class="visually-hidden">(current)</span></a>
             </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Imagenes</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="?controlador=imagenes&accion=subir">Subir</a></li>
+                <li><a class="dropdown-item" href="?controlador=imagenes&accion=mostrar">Descargar</a></li>
+              </ul>
+            </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">Playeras<span class="visually-hidden">(current)</span></a>
             </li>

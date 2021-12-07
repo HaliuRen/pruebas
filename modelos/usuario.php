@@ -6,22 +6,22 @@
         public $nombreUsuario;
         public $correo;
         public $contraseña;
-        public $img;
+        public $archivo;
 
-        public function __construct($id,$nombreUsuario,$correo,$contraseña,$img){
+        public function __construct($id,$nombreUsuario,$correo,$contraseña,$archivo){
             $this->id = $id;
             $this->nombreUsuario = $nombreUsuario;
             $this->correo = $correo;
             $this->contraseña = $contraseña;
-            $this->img = $img;
+            $this->archivo = $archivo;
         }
 
         //registrar
-        public static function registrar($nombreUsuario, $correo, $contraseña,$img){
+        public static function registrar($nombreUsuario, $correo, $contraseña,$archivo){
             $conexionBD = BD::crearInstancia();
 
-            $sql = $conexionBD->prepare("INSERT INTO usuarios(nombreUsuario,correo,contraseña,img) VALUES(?,?,?,?)");
-            $sql->execute(array($nombreUsuario, $correo, $contraseña,$img));
+            $sql = $conexionBD->prepare("INSERT INTO usuarios(nombreUsuario,correo,contraseña,archivo) VALUES(?,?,?,?)");
+            $sql->execute(array($nombreUsuario, $correo, $contraseña,$archivo));
         }
      
         //iniciar sesion
@@ -74,10 +74,10 @@
         public static function consultar(){
             $listaUsuarios = [];
             $conexionBD = BD::crearInstancia();
-            $sql = $conexionBD->query("SELECT * FROM usuarios" );
+            $sql = $conexionBD->query("SELECT * FROM usuarios");
     
             foreach($sql->fetchAll() as $usuario){
-                $listaUsuarios[] = new Usuario($usuario['id'], $usuario['nombreUsuario'], $usuario['correo'],$usuario['contraseña'],$usuario['img']);
+                $listaUsuarios[] = new Usuario($usuario['id'], $usuario['nombreUsuario'], $usuario['correo'],$usuario['contraseña'],$usuario['archivo']);
     
             }
             return $listaUsuarios;
