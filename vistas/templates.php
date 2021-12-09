@@ -34,6 +34,8 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">archivos</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 <li><a class="dropdown-item" href="?controlador=archivos&accion=subir">Cargar</a></li>
+                <li><a class="dropdown-item" href="?controlador=varios&accion=subir">Cargar Varios</a></li>
+                <li><a class="dropdown-item" href="?controlador=varios&accion=ver">Ver</a></li>
                 <li><a class="dropdown-item" href="?controlador=archivos&accion=mostrar">Descargar</a></li>
               </ul>
             </li>

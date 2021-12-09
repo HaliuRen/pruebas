@@ -12,8 +12,10 @@
         <?php foreach($archivos as $archivo){ ?>
             <tr>
                 <td><?php echo $archivo->id; ?></td>
-                <td><?php echo $archivo->archivo_binario ?></td>
-                <!-- <td><?php //echo ' <img src="'.$archivo->archivo_binario.'" width="40"/>' ?></td> -->
+                <!-- <td><?php //echo $archivo->archivo_binario ?></td> -->
+
+               
+                <td><?php echo ' <a href=" '.$archivo->archivo_binario.'">Descargar</a>' ?></td>
                 <td><?php echo $archivo->archivo_nombre; ?></td>
                 <td><?php echo $archivo->archivo_peso; ?></td>
                 <td><?php echo $archivo->archivo_tipo; ?></td>

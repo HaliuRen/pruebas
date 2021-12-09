@@ -16,11 +16,11 @@
                         $archivo_nombre =$_FILES['archivo']['name'];
                         $archivo_peso =$_FILES['archivo']['size'];
                         $archivo_tipo =$_FILES['archivo']['type'];
-
-                        Archivos::subir($archivo_binario, $archivo_nombre, $archivo_peso, $archivo_tipo);
-
-                        //Imagenes::subir($imagen,$tipo_imagen);  
                         
+                        $data=file_get_contents($archivo_binario);
+                        $base64 = 'data:application/' . $archivo_tipo. ';base64,' . base64_encode($data);
+                        
+                        Archivos::subir($base64, $archivo_nombre, $archivo_peso, $archivo_tipo);
                     
                 }
             } 
@@ -29,9 +29,13 @@
         }
         public function mostrar(){
             //print_r(Empleado::consultar());
+            // $archivo_nombre = $_GET['archivo_nombre'];
             $archivos = Archivos::mostrar();
+
             include_once("vistas/archivos/mostrar.php");
+
         }
+        
         
     }
 ?>
