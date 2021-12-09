@@ -9,7 +9,7 @@ class BD{
 
             $opcionesPDO[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 
-            self::$instancia = new PDO('mysql:host=localhost;dbname=rurus', 'root', '', $opcionesPDO);//cnonexcion
+            self::$instancia = new PDO('mysql:host=localhost;dbname=rurus', 'root', '123', $opcionesPDO);//cnonexcion
             echo "conexion realizada";
         }
 

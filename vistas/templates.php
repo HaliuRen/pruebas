@@ -30,7 +30,14 @@
                 <li><a class="dropdown-item" href="?controlador=imagenes&accion=mostrar">Descargar</a></li>
               </ul>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">archivos</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <li><a class="dropdown-item" href="?controlador=archivos&accion=subir">Cargar</a></li>
+                <li><a class="dropdown-item" href="?controlador=archivos&accion=mostrar">Descargar</a></li>
+              </ul>
+            </li>
+            <!-- <li class="nav-item active">
                 <a class="nav-link" href="#">Playeras<span class="visually-hidden">(current)</span></a>
             </li>
             <li class="nav-item active">
@@ -41,7 +48,7 @@
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="#">Rurus<span class="visually-hidden">(current)</span></a>
-            </li>
+            </li> -->
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person"></i></a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

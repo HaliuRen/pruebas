@@ -15,6 +15,8 @@
                 <td><?php echo $usuario->nombreUsuario; ?></td>
                 <td><?php echo $usuario->correo; ?></td>
                 <td><?php echo $usuario->contraseña; ?></td>
+                <?php var_dump($usuario); ?>
+                <!-- <td><?php //echo ' <a href="'.$usuario->archivo.'" />Descargar</a>' ?></td> -->
                 <!-- <td><?php //echo $usuario->archivo; ?></td> -->
                 <td><a title="Descargar Archivo" href="<?php echo $archivo[$i]; ?>" download="<?php echo $archivo[$i]; ?>" style="color: blue; font-size:18px;"> <?php echo $usuario->archivo; ?> </a></td>
                 <!-- <td><img src=' " '. <?php //echo $usuario->img; ?> . ' " ' alt='Img blob desde MySQL' width="200" /></td>   -->

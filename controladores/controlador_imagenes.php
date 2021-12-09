@@ -10,7 +10,7 @@
                 echo "Ha ocurrido un error";
             }
             else{
-                $permitidos = array("pdf","jpg");
+                $permitidos = array("image/jpeg");
                 $limite_kb = 16384;
 
                 if (in_array($_FILES['imagen']['type'], $permitidos) && $_FILES['imagen']['size'] <= $limite_kb * 1024) {

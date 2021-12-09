@@ -21,14 +21,38 @@
                     $fileNameCmps = explode(".", $fileName);
                     $fileExtension = strtolower(end($fileNameCmps));
                     
-                    $newFileName = $fileName;
+                    //$newFileName = $fileName;
 
                     $allowedfileExtensions = array('jpg', 'gif', 'png', 'zip', 'txt', 'xls', 'doc', 'pdf');
 
                     if (in_array($fileExtension, $allowedfileExtensions)){
+
+                        $imagen_temporal= $fileTmpPath;
+
+                        $tipo = $fileType;
                         
-                        Usuario::registrar($nombreUsuario,$correo,$contraseña,$newFileName);  
-                    } 
+                        
+                        $data=file_get_contents($imagen_temporal);
+                        
+                        $base64 = 'data:image/' . $tipo. ';base64,' . base64_encode($data);
+                        
+                        // $resultado = Imagenes::subir($base64,$tipo); 
+                        $resultado = Usuario::registrar($nombreUsuario,$correo,$contraseña,$base64);  
+                        // Usuario::registrar($nombreUsuario,$correo,$contraseña,$newFileName);  
+                        if ($resultado != '')
+                        {
+                            echo "El archivo ha sido copiado exitosamente.";
+                        }
+                        else
+                        {
+                            echo "Ocurrió algun error al copiar el archivo.";
+                        }
+                    
+                    }
+                     else
+                    {
+                        echo "Formato de archivo no permitido o excede el tamaño límite de Kbytes.";
+                    }
                 }
                 // $revisar = getimagesize($_FILES["img"]["tmp_name"]);
                 // if($revisar !== false){
